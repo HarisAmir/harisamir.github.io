@@ -31,11 +31,29 @@ try {
   assert.notEqual(await button.evaluate(el => getComputedStyle(el, '::before').transform), hoveredFill, 'Fill recedes on pointer exit')
   assert.equal(await button.evaluate(el => el.style.getPropertyValue('--pointer-x')), '')
 
+  // Record actual browser scroll events. A fixed 60 ms sample is unreliable on
+  // CI: the wheel event may not have arrived, or the animation may have finished.
+  await page.locator('.hero-statement').hover()
+  await page.evaluate(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    window.__wheelCheck = { positions: [], handled: false }
+    window.__recordWheelScroll = () => window.__wheelCheck.positions.push(scrollY)
+    window.addEventListener('scroll', window.__recordWheelScroll, { passive: true })
+    window.addEventListener('wheel', event => {
+      queueMicrotask(() => { window.__wheelCheck.handled = event.defaultPrevented })
+    }, { once: true })
+  })
   await page.mouse.wheel(0, 600)
-  await page.waitForTimeout(60)
-  const early = await page.evaluate(() => scrollY)
-  assert(early > 0 && early < 590, 'Wheel movement eases toward its destination')
   await page.waitForFunction(() => Math.abs(scrollY - 600) < 2)
+  const wheelCheck = await page.evaluate(() => {
+    window.removeEventListener('scroll', window.__recordWheelScroll)
+    const result = window.__wheelCheck
+    delete window.__wheelCheck
+    delete window.__recordWheelScroll
+    return result
+  })
+  assert(wheelCheck.handled, 'Desktop wheel movement is handled by smooth scrolling')
+  assert(wheelCheck.positions.some(y => y > 0 && y < 590), `Wheel movement eases through intermediate positions: ${wheelCheck.positions}`)
   // Navigation cancels active scroll easing and starts the new page at its top.
   await page.mouse.wheel(0, 600)
   await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Projects' }).click()
