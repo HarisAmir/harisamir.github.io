@@ -1,0 +1,32 @@
+{
+  "name": "harisamir.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "npm run media && vite",
+    "media": "node scripts/build-media.mjs",
+    "check": "vue-tsc --noEmit",
+    "build": "npm run check && npm run media && vite build && vite build --ssr src/entry-server.ts --outDir .ssr && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "test": "node scripts/smoke-test.mjs && node scripts/motion-test.mjs && node scripts/pdf-links-test.mjs",
+    "check:links": "node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@fontsource/instrument-sans": "^5.3.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/server-renderer": "^3.5.13",
+    "playwright": "^1.56.0",
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "vue-tsc": "^3.0.0"
+  }
+}

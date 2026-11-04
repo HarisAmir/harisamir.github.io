@@ -1,0 +1,1 @@
+<template><section class="not-found"><p class="mono accent">404 / Page not found</p><h1>A small detour.</h1><p>This page doesn’t exist. Let’s get you back to the work.</p><RouterLink to="/" class="button button-dark">Back to home ↗</RouterLink></section></template>
