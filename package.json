@@ -12,7 +12,7 @@
     "check": "vue-tsc --noEmit",
     "build": "npm run check && npm run media && vite build && vite build --ssr src/entry-server.ts --outDir .ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
-    "test": "node scripts/smoke-test.mjs && node scripts/motion-test.mjs && node scripts/pdf-links-test.mjs",
+    "test": "node scripts/smoke-test.mjs && node scripts/motion-test.mjs && node scripts/pdf-links-test.mjs && node scripts/theme-test.mjs",
     "check:links": "node scripts/check-links.mjs"
   },
   "dependencies": {

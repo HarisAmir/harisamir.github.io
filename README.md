@@ -18,7 +18,7 @@ npm run build
 npm run preview
 ```
 
-`npm run build` type-checks the app, prepares responsive images and public PDFs, builds the browser bundle, and prerenders the pages, sitemap, robots.txt, and 404 page into `dist/`.
+`npm run build` type-checks the app, prepares responsive images and includes the PDFs from `public/documents/`, builds the browser bundle, and prerenders the pages, sitemap, robots.txt, and 404 page into `dist/`.
 
 ## Update the site
 
@@ -30,17 +30,16 @@ npm run preview
 | `src/data/pages.ts` | Navigation, page descriptions, homepage index, SEO metadata |
 | `src/pages/` | Page headings and structure |
 | `src/style.css` | Typography, colors, layout, and motion |
-| `photo3.jpeg` | Original full portrait, displayed without background blur or cropping |
+| `photo4.jpeg` | Original full portrait, displayed without background blur or cropping |
 | `assets-src/projects/` | Project figures, video posters, prepared MP4s |
 | `assets-src/publications/` | Publication figure |
 | `assets-src/point-cloud.png` | Office reconstruction figure |
 | `public/affiliations/` | The three active affiliation logos |
-| `public/fonts/` | Display font and its license |
-| `Haris_Amir_resume_vi.pdf` | Downloadable résumé |
-| `GenAI_Doc.pdf` | Translation project report |
-| `Project_P24__Continual_Object_Detection_in__Emerging_Modalities___Events_Dataset.pdf` | Event-detection project report |
+| `public/documents/Haris_Amir_cv_web.pdf` | Downloadable résumé |
+| `public/documents/german-french-translation.pdf` | Translation project report |
+| `public/documents/continual-event-detection.pdf` | Event-detection project report |
 
-The résumé and project PDFs are also retained at their linked `public/` paths and included in Git so they are directly available. The build refreshes them from the three root PDFs and prepares images and videos. Keep the root PDFs, public PDFs, source images, and prepared videos. Dependencies and generated media are ignored by Git; they should stay on disk while developing or previewing the site.
+The three active PDFs live only in `public/documents/` and are tracked in Git. Replace those files to update the documents; Vite serves them directly during development and copies them into `dist/documents/` for deployment. Do not delete this folder. Media builds prepare the responsive photos, project/publication figures, and comparison videos from their source assets. Dependencies and generated media are ignored by Git and remain available locally.
 
 The DLS3D manuscript is not part of the project or deployment. Its paper and code remain “Coming soon”. The paired videos play at their original speed; DLS3D holds its final frame until the baseline ends, then both restart together.
 
@@ -58,7 +57,7 @@ On macOS, an installed Chrome can be used instead of downloading Chromium:
 CHROME_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npm test
 ```
 
-The browser tests cover routes, desktop/mobile widths, local links, image loading, keyboard access, galleries, citations, paired video playback, scrolling, page transitions, randomized waves, and reduced motion. Test screenshots go into the ignored `artifacts/` folder.
+The browser tests cover routes, desktop/mobile widths, local links, image loading, keyboard access, galleries, citations, paired video playback, scrolling, page transitions, flat backgrounds, the animated location globe, and reduced motion. Test screenshots go into the ignored `artifacts/` folder.
 
 `npm run check:links` checks external links and needs network access. Some services block automated requests; inspect those links in a browser if reported as blocked.
 
@@ -93,3 +92,5 @@ git push
 Every successful push to `main` publishes automatically. Upload the source project, including `.github/` and `assets-src/`; the workflow creates and uploads `dist/` for you. The Vite base `/` and `profile.url` are configured for this user-site repository.
 
 Official guidance: [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) and [custom GitHub Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+The navbar theme switch follows the device’s light/dark setting on a first visit. A manual choice is saved in local storage and restored on future visits. Both palettes also support reduced motion.

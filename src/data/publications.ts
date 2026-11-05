@@ -8,7 +8,7 @@ export interface Publication {
   image: { src: string; large: string; width: number; height: number; alt: string; caption: string }
   summary: string
   contributions: string[]
-  links: { label: string; href: string; icon: 'paper' | 'arxiv' | 'project' | 'code' | 'dataset' | 'poster' }[]
+  links: { label: string; href: string; icon: 'paper' | 'arxiv' | 'project' | 'github' | 'dataset' | 'poster' }[]
   bibtex: string
 }
 
@@ -41,7 +41,7 @@ export const publications: Publication[] = [
       { label: 'Paper', href: 'https://arxiv.org/pdf/2604.13730', icon: 'paper' },
       { label: 'arXiv', href: 'https://arxiv.org/abs/2604.13730', icon: 'arxiv' },
       { label: 'Project', href: 'https://mauk95.github.io/ReConText3D/', icon: 'project' },
-      { label: 'Code', href: 'https://github.com/mauk95/ReConText3D', icon: 'code' },
+      { label: 'GitHub', href: 'https://github.com/mauk95/ReConText3D', icon: 'github' },
       { label: 'Dataset', href: 'https://github.com/mauk95/ReConText3D#toys4k-cl-benchmark-dataset', icon: 'dataset' },
       { label: 'Poster', href: 'https://mauk95.github.io/ReConText3D/assets/poster.png', icon: 'poster' },
     ],

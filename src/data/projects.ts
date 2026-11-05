@@ -2,7 +2,7 @@ export interface ProjectFigure { src: string; alt: string; caption: string }
 export interface Project {
   slug: string; title: string; summary: string;
   tags: string[]; highlights: string[]; figures: ProjectFigure[];
-  links: { label: string; href: string; icon: 'paper' | 'code' }[];
+  links: { label: string; href: string; icon: 'paper' | 'github' }[];
   forthcoming?: string[];
   comparison?: { baseline: string; ours: string; baselinePoster: string; oursPoster: string };
 }
@@ -19,7 +19,7 @@ export const projects: Project[] = [
       '3D detection: 19–22% lower latency and 34–42% fewer active parameters on NVIDIA GV100.',
       'BEV segmentation: 24% lower latency and 27% fewer active parameters, with comparable mIoU.',
     ],
-    figures: [], links: [], forthcoming: ['Paper', 'Code'],
+    figures: [], links: [], forthcoming: ['Paper', 'GitHub'],
     comparison: {
       baseline: '/projects/dls3d-baseline.mp4', ours: '/projects/dls3d-ours.mp4',
       baselinePoster: '/projects/dls3d-baseline.webp', oursPoster: '/projects/dls3d-ours.webp',
@@ -27,8 +27,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'continual-event-detection',
-    title: 'Continual Object Detection',
-    tags: ['Continual learning', 'Event cameras'],
+    title: 'Continual Event-based Object Detection',
+    tags: ['Continual learning', 'Training Methodology', 'Event cameras', 'Object detection'],
     summary: 'An event-camera detector that learns new road-object classes without forgetting earlier ones.',
     highlights: [
       'Static-teacher distillation retains old classes while adding trucks and buses on the 1 Mpx dataset.',
@@ -36,18 +36,18 @@ export const projects: Project[] = [
     ],
     figures: [
       { src: '/projects/events-architecture.webp', alt: 'Static teacher and student architecture with pseudo-label generation, supervised loss, and distillation loss.', caption: 'Architecture. Static-teacher guidance for the student detector during incremental learning.' },
-      { src: '/projects/events-per-class.webp', alt: 'Per-class mAP@50 comparison for pedestrian, two-wheeler, car, truck, and bus across four incremental learning methods.', caption: 'Table 1. Class-wise detection results, comparing fine-tuning, Freeze and Add, supervised learning, and distillation.' },
-      { src: '/projects/events-overall.webp', alt: 'Base, novel, and overall mAP@50: supervised plus distillation scores 27.3 across all three groups.', caption: 'Table 2. Base, novel, and overall mAP@50. Distillation balances retention of old classes with learning new ones.' },
+      { src: '/projects/events-qualitative-baselines.webp', alt: 'Event-camera predictions above ground truth: Freeze and Add retains base classes, while fine-tuning detects novel classes but forgets base classes.', caption: 'Qualitative comparison. Freeze & Add versus fine-tuning, with predictions above ground truth.' },
+      { src: '/projects/events-qualitative-continual.webp', alt: 'Event-camera predictions and ground truth for continual learning with supervised loss alone and with supervised plus distillation losses, detecting cars, pedestrians, and trucks.', caption: 'Continual learning. Predictions above ground truth, comparing supervision alone with supervision plus distillation.' },
     ],
     links: [
-      { label: 'Report (PDF)', href: '/projects/continual-event-detection.pdf', icon: 'paper' },
-      { label: 'Code', href: 'https://github.com/HarisAmir/Continual-Event-Object-Detection/tree/dev', icon: 'code' },
+      { label: 'Report (PDF)', href: '/documents/continual-event-detection.pdf', icon: 'paper' },
+      { label: 'GitHub', href: 'https://github.com/HarisAmir/Continual-Event-Object-Detection/tree/dev', icon: 'github' },
     ],
   },
   {
     slug: 'german-french-translation',
     title: 'German-to-French LLM Translation',
-    tags: ['Generative AI', 'Language translation'],
+    tags: ['Gen AI', 'Fine-tuning', 'LLM', 'Language translation'],
     summary: 'Adapts Llama 3.2 3B with 4-bit LoRA on a single T4 GPU, comparing real and synthetic training data.',
     highlights: [
       'Compares 800 real, 1,600 synthetic, and 2,400 combined training pairs.',
@@ -55,9 +55,8 @@ export const projects: Project[] = [
     ],
     figures: [
       { src: '/projects/translation-interface.webp', alt: 'Gradio German-to-French translation interface with German input, optional French reference, translated output, and BLEU score.', caption: 'Demo interface. Translate German text and optionally compare against a French reference.' },
-      { src: '/projects/translation-results.webp', alt: 'BLEU results: pretrained 10.49, OPUS-100 fine-tuned 10.53, synthetic fine-tuned 10.23, and combined fine-tuned 9.11.', caption: 'Evaluation. Comparing the base model with three training-data configurations.' },
     ],
-    links: [{ label: 'Report (PDF)', href: '/projects/german-french-translation.pdf', icon: 'paper' }],
+    links: [{ label: 'Report (PDF)', href: '/documents/german-french-translation.pdf', icon: 'paper' }],
   },
   {
     slug: 'rgbd-reconstruction',
@@ -72,6 +71,6 @@ export const projects: Project[] = [
       { src: '/projects/point-cloud-office.webp', alt: 'Colorized 3D point-cloud reconstruction of an office from ZED RGB-D camera recordings.', caption: 'Office reconstruction. Colorized points accumulated from multiple RGB-D frames.' },
       { src: '/projects/point-cloud-bathroom.webp', alt: 'Colorized 3D point-cloud reconstruction of a bathroom from the project repository.', caption: 'Bathroom reconstruction. A second indoor scene processed with the same pipeline.' },
     ],
-    links: [{ label: 'Code', href: 'https://github.com/HarisAmir/AICI-Point-Cloud-Generation', icon: 'code' }],
+    links: [{ label: 'GitHub', href: 'https://github.com/HarisAmir/AICI-Point-Cloud-Generation', icon: 'github' }],
   },
 ]

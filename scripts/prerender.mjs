@@ -16,7 +16,7 @@ for (const route of routes) {
     <meta property="og:description" content="${escape(route.description)}" />
     <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${profile.url}/profile/portrait-1280.webp" />
-    <meta property="og:image:alt" content="Haris Amir standing beside a canal" />
+    <meta property="og:image:alt" content="Haris Amir in front of a glass and brick building" />
     <meta name="twitter:card" content="summary_large_image" />
     ${route.path === '/404.html' ? '<meta name="robots" content="noindex" />' : ''}
     ${route.path === '/' ? `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name: profile.name, url: profile.url, jobTitle: profile.role, image: profile.url + '/profile/portrait-1280.webp', sameAs: [profile.github, profile.linkedin, profile.scholar] }).replace(/</g, '\\u003c')}</script>` : ''}`

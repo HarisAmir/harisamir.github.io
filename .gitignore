@@ -5,9 +5,7 @@ dist/
 artifacts/
 public/profile/
 public/publications/
-public/projects/*
-!public/projects/continual-event-detection.pdf
-!public/projects/german-french-translation.pdf
+public/projects/
 # Keep unpublished manuscripts, original recordings, and cleanup backups out of Git.
 Efficient_Multi_View_3D_Perception_by_Dynamic_Layer_Selection_WACV_2027.pdf
 *.mov

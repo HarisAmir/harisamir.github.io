@@ -3,7 +3,7 @@ import { profile, affiliations } from '../data/profile'
 import { pages } from '../data/pages'
 import ArrowIcon from '../components/ArrowIcon.vue'
 import SkillsStrip from '../components/SkillsStrip.vue'
-import LocationMarker from '../components/LocationMarker.vue'
+import LocationGlobe from '../components/LocationGlobe.vue'
 import { projects } from '../data/projects'
 import { publications } from '../data/publications'
 const projectPreview = projects.find(project => project.slug === 'dls3d')!.comparison!.oursPoster
@@ -13,7 +13,7 @@ const publicationPreview = publications.find(publication => publication.id === '
 <template>
   <div class="home-page">
   <section id="about" class="hero">
-    <div class="hero-kicker mono rise"><span>Portfolio - 2026 </span><span class="hero-location">Berlin, DE <LocationMarker /></span></div>
+    <div class="hero-kicker mono rise"><span>Portfolio - 2026 </span><span class="hero-location">Berlin, DE <LocationGlobe /></span></div>
     <div class="hero-content">
       <div class="hero-intro">
         <div class="hero-name-frame">
@@ -30,7 +30,7 @@ const publicationPreview = publications.find(publication => publication.id === '
         <dl class="hero-facts rise"><div v-for="fact in profile.facts" :key="fact.label"><dt class="mono">{{ fact.label }}</dt><dd :class="{ 'availability-status': fact.label === 'Status' }"><span v-if="fact.label === 'Status'" class="status-dot" aria-hidden="true"></span>{{ fact.value }}</dd></div></dl>
       </div>
       <figure class="portrait rise">
-        <img src="/profile/portrait-640.webp" srcset="/profile/portrait-640.webp 640w, /profile/portrait-1280.webp 1280w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1050px) 40vw, 33vw" width="640" height="854" alt="Haris Amir standing beside a canal" fetchpriority="high" />
+        <img src="/profile/portrait-640.webp" srcset="/profile/portrait-640.webp 640w, /profile/portrait-1280.webp 1280w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1050px) 40vw, 33vw" width="640" height="853" alt="Haris Amir in front of a glass and brick building" fetchpriority="high" />
       </figure>
     </div>
     <section class="affiliations" aria-labelledby="affiliations-heading">
