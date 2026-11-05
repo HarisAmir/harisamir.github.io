@@ -1,6 +1,9 @@
 <script setup lang="ts">
 defineProps<{ name: string }>()
 const paths: Record<string, string> = {
+  Education: 'm2 9 10-5 10 5-10 5L2 9Zm4 2v6c4 3 8 3 12 0v-6m4-2v7',
+  'Based in': 'M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Zm-5 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z',
+  Status: 'M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2V11.5a9.5 9.5 0 0 1 19 0ZM7 11h.01M12 11h.01M17 11h.01', 
   paper: 'M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8M8 16h8',
   arxiv: 'M7 4h13v16H7M7 4H4v4h3M7 4v16H4v-4h3M10 8h7m-7 4h7m-7 4h5',
   project: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM3 12h18M12 3c-5 5-5 13 0 18 5-5 5-13 0-18Z',

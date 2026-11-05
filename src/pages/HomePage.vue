@@ -2,6 +2,7 @@
 import { profile, affiliations } from '../data/profile'
 import { pages } from '../data/pages'
 import ArrowIcon from '../components/ArrowIcon.vue'
+import ResourceIcon from '../components/ResourceIcon.vue'
 import SkillsStrip from '../components/SkillsStrip.vue'
 import LocationGlobe from '../components/LocationGlobe.vue'
 import { projects } from '../data/projects'
@@ -27,7 +28,7 @@ const publicationPreview = publications.find(publication => publication.id === '
           <RouterLink to="/projects/" class="button button-dark">View Projects <ArrowIcon /></RouterLink>
           <a :href="profile.resume" download class="button button-outline">Download Resume <span aria-hidden="true">↓</span></a>
         </div>
-        <dl class="hero-facts rise"><div v-for="fact in profile.facts" :key="fact.label"><dt class="mono">{{ fact.label }}</dt><dd :class="{ 'availability-status': fact.label === 'Status' }"><span v-if="fact.label === 'Status'" class="status-dot" aria-hidden="true"></span>{{ fact.value }}</dd></div></dl>
+        <dl class="hero-facts rise"><div v-for="fact in profile.facts" :key="fact.label"><dt class="mono">{{ fact.label }}<ResourceIcon :name="fact.label" class="fact-icon" /></dt><dd :class="{ 'availability-status': fact.label === 'Status' }"><span v-if="fact.label === 'Status'" class="status-dot" aria-hidden="true"></span>{{ fact.value }}</dd></div></dl>
       </div>
       <figure class="portrait rise">
         <img src="/profile/portrait-640.webp" srcset="/profile/portrait-640.webp 640w, /profile/portrait-1280.webp 1280w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1050px) 40vw, 33vw" width="640" height="853" alt="Haris Amir in front of a glass and brick building" fetchpriority="high" />
