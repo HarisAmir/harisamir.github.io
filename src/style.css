@@ -597,3 +597,7 @@ section[id] { scroll-margin-top: 130px; }
 .publication-resource:is(:hover, :focus-visible) svg, .site-nav a:is(:hover, :focus-visible) .nav-number { color: light-dark(#65353e, #fff0f0); }
 
 .hero-facts .fact-icon { width: 18px; height: 18px; color: var(--accent-text); }
+
+.project-title-star { display: inline-block; margin-right: .35em; color: #f3bb29; vertical-align: .02em; }
+
+.project-content .publication-summary strong, .project-content .publication-contributions strong { color: var(--ink); font-weight: 600; }

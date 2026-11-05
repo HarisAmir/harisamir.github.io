@@ -126,7 +126,7 @@ try {
   await page.goto(url + '/publications/')
   assert.equal(await page.locator('.publication-card').count(), 1)
   assert.equal(await page.locator('.publication-authors strong').textContent(), 'Muhammad Haris Bin Amir')
-  assert.equal(await page.locator('.publication-resources > a').count(), 6)
+  assert.equal(await page.locator('.publication-resources > a').count(), 5)
   const citation = page.locator('.publication-citation')
   await citation.locator('summary').click()
   assert.notEqual(await citation.getAttribute('open'), null, 'BibTeX expands')

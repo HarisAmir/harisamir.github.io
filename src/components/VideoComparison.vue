@@ -74,10 +74,10 @@ onBeforeUnmount(stop)
 </script>
 <template>
   <section class="video-comparison" aria-label="DLS3D versus SOTA baseline video comparison">
-    <div class="comparison-heading"><div><p class="mono accent">Less latency. More frames per second.</p><h3>Same scene. Same accuracy. Faster perception.</h3></div></div>
+    <div class="comparison-heading"><div><p class="mono accent">Less latency. More FPS</p><h3>Same scene. Same accuracy. Faster perception.</h3></div></div>
     <div class="comparison-pair">
       <figure><figcaption><strong>SOTA baseline</strong><span class="mono">11.07 s</span></figcaption><video ref="baseline" :src="media.baseline" :poster="media.baselinePoster" muted playsinline preload="auto" aria-label="SOTA baseline multi-view 3D detection visualization" @canplay="resume" @seeked="resume" @waiting="buffer" @ended="loop" @error="fail" /></figure>
-      <figure class="comparison-ours"><figcaption><strong>Ours <span>(DLS3D)</span></strong><span class="mono">8.74 s</span></figcaption><div class="comparison-frame"><video ref="ours" :src="media.ours" :poster="media.oursPoster" muted playsinline preload="auto" aria-label="DLS3D multi-view 3D detection visualization" @canplay="resume" @seeked="resume" @waiting="buffer" @ended="finished = true" @error="fail" /><span v-if="finished" class="video-hold">Finished · waiting for baseline</span></div></figure>
+      <figure class="comparison-ours"><figcaption><strong>Ours</strong><span class="mono">8.74 s</span></figcaption><div class="comparison-frame"><video ref="ours" :src="media.ours" :poster="media.oursPoster" muted playsinline preload="auto" aria-label="DLS3D multi-view 3D detection visualization" @canplay="resume" @seeked="resume" @waiting="buffer" @ended="finished = true" @error="fail" /><span v-if="finished" class="video-hold">Finished · waiting for baseline</span></div></figure>
     </div>
     <p v-if="error" class="comparison-status" role="status">{{ error }}</p>
     <noscript><p class="comparison-note">Enable JavaScript to play the synchronized comparison.</p></noscript>

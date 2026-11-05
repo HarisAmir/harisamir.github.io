@@ -12,12 +12,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'dls3d',
-    title: 'DLS3D: Faster Multi-View 3D Perception',
+    title: 'Efficient Vision Transformer-based Multi-View 3D Perception',
     tags: ['Computer Vision', 'Transformers', 'Optimization', '3D Perception'],
-    summary: 'Selects task-relevant transformer layers to speed up 3D perception while preserving prediction quality.',
+    summary: 'Selects **task-relevant transformer layers** to speed up 3D perception while **preserving prediction quality**.',
     highlights: [
-      '3D detection: 19–22% lower latency and 34–42% fewer active parameters on NVIDIA GV100.',
-      'BEV segmentation: 24% lower latency and 27% fewer active parameters, with comparable mIoU.',
+      '**3D detection:** **19–22% lower latency** and **34–42% fewer active parameters** on NVIDIA GV100, with **comparable mAP scores**.',
+      '**BEV segmentation:** **24% lower latency** and **27% fewer active parameters**, with **comparable mIoU**.',
     ],
     figures: [], links: [], forthcoming: ['Paper', 'GitHub'],
     comparison: {

@@ -22,7 +22,7 @@ async function copyCitation() {
       <figcaption><strong>Overview.</strong> {{ publication.image.caption }}</figcaption>
     </figure>
     <div class="publication-content">
-      <div class="publication-badges"><span class="venue-badge"><svg class="venue-star" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.76 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2Z" /></svg>{{ publication.venue }}</span><span class="mono year-badge">{{ publication.year }}</span></div>
+      <div class="publication-badges"><span class="venue-badge"><svg class="venue-star" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.76 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2Z" /></svg>{{ publication.venue }}</span><span v-if="publication.id !== 'recontext3d'" class="mono year-badge">{{ publication.year }}</span></div>
       <h2 :id="`${publication.id}-title`">{{ publication.title }}</h2>
       <p class="publication-authors"><template v-for="(author, index) in publication.authors" :key="author.name"><span v-if="index">, </span><strong v-if="author.highlight">{{ author.name }}</strong><span v-else>{{ author.name }}</span></template></p>
       <p class="publication-summary">{{ publication.summary }}</p>

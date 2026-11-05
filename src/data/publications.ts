@@ -42,7 +42,6 @@ export const publications: Publication[] = [
       { label: 'arXiv', href: 'https://arxiv.org/abs/2604.13730', icon: 'arxiv' },
       { label: 'Project', href: 'https://mauk95.github.io/ReConText3D/', icon: 'project' },
       { label: 'GitHub', href: 'https://github.com/mauk95/ReConText3D', icon: 'github' },
-      { label: 'Dataset', href: 'https://github.com/mauk95/ReConText3D#toys4k-cl-benchmark-dataset', icon: 'dataset' },
       { label: 'Poster', href: 'https://mauk95.github.io/ReConText3D/assets/poster.png', icon: 'poster' },
     ],
     bibtex: `@InProceedings{Khan_2026_CVPR,
