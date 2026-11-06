@@ -1,3 +1,5 @@
+import type { Project } from './projects'
+
 export interface Publication {
   id: string
   title: string
@@ -52,5 +54,26 @@ export const publications: Publication[] = [
   year = {2026},
   pages = {7893-7902}
 }`,
+  },
+]
+
+// Research submissions retain their comparisons while the manuscripts are private.
+export const underReviewPublications: Project[] = [
+  {
+    slug: 'dls3d',
+    status: 'Under review',
+    publicationType: 'Master’s thesis',
+    title: 'Efficient Vision Transformer-based Multi-View 3D Perception',
+    tags: ['Computer Vision', 'Transformers', 'Optimization', '3D Perception'],
+    summary: 'Selects **task-relevant transformer layers** to speed up 3D perception while **preserving prediction quality**.',
+    highlights: [
+      '**3D detection:** **19–22% lower latency** and **34–42% fewer active parameters** on NVIDIA GV100, with **comparable mAP scores**.',
+      '**BEV segmentation:** **24% lower latency** and **27% fewer active parameters**, with **comparable mIoU**.',
+    ],
+    figures: [], links: [], forthcoming: ['Paper', 'GitHub'],
+    comparison: {
+      baseline: '/projects/dls3d-baseline.mp4', ours: '/projects/dls3d-ours.mp4',
+      baselinePoster: '/projects/dls3d-baseline.webp', oursPoster: '/projects/dls3d-ours.webp',
+    },
   },
 ]

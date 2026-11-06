@@ -68,7 +68,7 @@ try {
   await page.waitForURL('**/publications/')
   await page.waitForFunction(() => document.querySelector('.publication-card') && !document.querySelector('.page-enter-active, .page-leave-active'))
   await page.goBack()
-  await page.waitForFunction(() => document.querySelector('#dls3d') && !document.querySelector('.page-enter-active, .page-leave-active'))
+  await page.waitForFunction(() => document.querySelector('#continual-event-detection') && !document.querySelector('.page-enter-active, .page-leave-active'))
   assert(Math.abs(await page.evaluate(() => scrollY) - 1200) < 2, `Browser back restores scroll after page swap: ${await page.evaluate(() => scrollY)}`)
 
   const gallery = page.locator('#continual-event-detection .gallery-track')

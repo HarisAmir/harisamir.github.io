@@ -7,7 +7,8 @@ import SkillsStrip from '../components/SkillsStrip.vue'
 import LocationGlobe from '../components/LocationGlobe.vue'
 import { projects } from '../data/projects'
 import { publications } from '../data/publications'
-const projectPreview = projects.find(project => project.slug === 'dls3d')!.comparison!.oursPoster
+const featuredProject = projects[0]!
+const projectPreview = featuredProject.figures[0]!.src
 const publicationPreview = publications.find(publication => publication.id === 'recontext3d')!
 </script>
 
@@ -49,7 +50,7 @@ const publicationPreview = publications.find(publication => publication.id === '
       <span class="index-title">{{ page.title }}</span>
       <span class="index-description">{{ page.summary }}</span>
       <span class="index-preview" :class="{ 'index-preview-image': page.title !== 'Contact' }" aria-hidden="true">
-        <template v-if="page.title === 'Projects'"><img :src="projectPreview" alt="" width="1130" height="720" loading="lazy" decoding="async" /><span class="mono">DLS3D · Dynamic layer selection</span></template>
+        <template v-if="page.title === 'Projects'"><img :src="projectPreview" alt="" width="1130" height="720" loading="lazy" decoding="async" /><span class="mono">{{ featuredProject.tags.slice(0, 2).join(' · ') }}</span></template>
         <template v-else-if="page.title === 'Publications'"><img :src="publicationPreview.image.src" alt="" :width="publicationPreview.image.width" :height="publicationPreview.image.height" loading="lazy" decoding="async" /><span class="mono">ReConText3D · {{ publicationPreview.venue }}</span></template>
         <template v-else><span class="mono">Start a conversation</span><span class="preview-type">Say hello<span class="accent">.</span></span></template>
       </span>

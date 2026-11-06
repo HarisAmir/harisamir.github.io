@@ -601,3 +601,5 @@ section[id] { scroll-margin-top: 130px; }
 .project-title-star { display: inline-block; margin-right: .35em; color: #f3bb29; vertical-align: .02em; }
 
 .project-content .publication-summary strong, .project-content .publication-contributions strong { color: var(--ink); font-weight: 600; }
+
+.review-badge { background: var(--tag-bg); color: var(--tag-ink); border: 1px solid var(--tag-border); }

@@ -26,7 +26,7 @@ npm run preview
 | --- | --- |
 | `src/data/profile.ts` | Introduction, focus text, contact details, affiliations, skills |
 | `src/data/projects.ts` | Project titles, tags, descriptions, results, media, resource links |
-| `src/data/publications.ts` | Publications, authors, figures, links, and BibTeX |
+| `src/data/publications.ts` | Publications, submissions under review, authors, figures, links, and BibTeX |
 | `src/data/pages.ts` | Navigation, page descriptions, homepage index, SEO metadata |
 | `src/pages/` | Page headings and structure |
 | `src/style.css` | Typography, colors, layout, and motion |
@@ -41,7 +41,7 @@ npm run preview
 
 The three active PDFs live only in `public/documents/` and are tracked in Git. Replace those files to update the documents; Vite serves them directly during development and copies them into `dist/documents/` for deployment. Do not delete this folder. Media builds prepare the responsive photos, project/publication figures, and comparison videos from their source assets. Dependencies and generated media are ignored by Git and remain available locally.
 
-The DLS3D manuscript is not part of the project or deployment. Its paper and code remain “Coming soon”. The paired videos play at their original speed; DLS3D holds its final frame until the baseline ends, then both restart together.
+DLS3D is listed under Publications with an “Under review” badge; its private manuscript is not included in deployment. Its paper and code remain “Coming soon”. The paired videos play at their original speed; DLS3D holds its final frame until the baseline ends, then both restart together.
 
 ## Checks
 
