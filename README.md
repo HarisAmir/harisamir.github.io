@@ -35,7 +35,7 @@ npm run preview
 | `assets-src/publications/` | Publication figure |
 | `assets-src/point-cloud.png` | Office reconstruction figure |
 | `public/affiliations/` | The three active affiliation logos |
-| `public/documents/Haris_Amir_cv_web.pdf` | Downloadable résumé |
+| `public/documents/Haris_Amir_CV_ML_W.pdf` | Downloadable résumé |
 | `public/documents/german-french-translation.pdf` | Translation project report |
 | `public/documents/continual-event-detection.pdf` | Event-detection project report |
 

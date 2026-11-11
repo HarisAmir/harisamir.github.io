@@ -1,4 +1,4 @@
-// Content source: public/documents/Haris_Amir_cv_web.pdf. Update dates explicitly as roles change.
+// Content source: public/documents/Haris_Amir_CV_ML_W.pdf. Update dates explicitly as roles change.
 export const profile = {
   name: 'Haris Amir',
   role: 'Machine Learning Engineer & Researcher',
@@ -7,7 +7,7 @@ export const profile = {
   github: 'https://github.com/HarisAmir',
   linkedin: 'https://www.linkedin.com/in/its-haris-amir/',
   scholar: 'https://scholar.google.com/citations?user=j-ZjEP8AAAAJ&hl=en',
-  resume: '/documents/Haris_Amir_cv_web.pdf',
+  resume: '/documents/Haris_Amir_CV_ML_W.pdf',
   url: 'https://harisamir.github.io',
   description: 'Haris Amir is a machine learning engineer in Berlin, working on 3D perception, computer vision, continual learning, and production ML systems.',
   introduction: 'Building intelligent systems to solve real-world problems.',
