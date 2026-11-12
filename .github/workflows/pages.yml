@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out source
         uses: actions/checkout@v7
@@ -29,8 +29,12 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-      - name: Install test browser
-        run: npx playwright install --with-deps chromium
+      - name: Select preinstalled Chrome
+        shell: bash
+        run: |
+          chrome_path="$(command -v google-chrome)"
+          printf 'CHROME_EXECUTABLE=%s\n' "$chrome_path" >> "$GITHUB_ENV"
+          "$chrome_path" --version
       - name: Run browser checks
         run: npm test
       - name: Upload website

@@ -57,6 +57,8 @@ On macOS, an installed Chrome can be used instead of downloading Chromium:
 CHROME_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npm test
 ```
 
+GitHub Actions uses the Chrome browser already installed on the Ubuntu 24.04 runner, avoiding a separate browser or Ubuntu package download. The complete browser test suite still runs before deployment.
+
 The browser tests cover routes, desktop/mobile widths, local links, image loading, keyboard access, galleries, citations, paired video playback, scrolling, page transitions, flat backgrounds, the animated location globe, and reduced motion. Test screenshots go into the ignored `artifacts/` folder.
 
 `npm run check:links` checks external links and needs network access. Some services block automated requests; inspect those links in a browser if reported as blocked.
